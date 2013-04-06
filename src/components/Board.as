@@ -95,6 +95,27 @@ package components
 			}
 			
 		}
+		
+		public function get rooms():Array 
+		{
+			return _rooms;
+		}
+		
+		public function get mobs():Array 
+		{
+			return _mobs;
+		}
+		
+		public function renderRooms():void {
+			
+			var len:int = _rooms.length;
+			for (var i:int = 0; i < len; i++) {
+				
+				(_rooms[i] as Room).render();
+				
+			}
+			
+		}
 	}
 	
 }

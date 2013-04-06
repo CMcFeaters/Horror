@@ -3,6 +3,7 @@ package
 	import components.Board;
 	import components.BtnList;
 	import components.MenuBtn;
+	import components.MenuFunctions;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
@@ -30,6 +31,7 @@ package
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 			// entry point
+			MenuFunctions.registerMain(this);
 			
 			makeBoard();
 			makeBtns();
@@ -62,6 +64,20 @@ package
 				_menuBtns.push(btn);
 			}
 			
+		}
+		
+		public function enableAllBtns():void {
+			var len:int = _menuBtns.length;
+			for (var i:int = 0; i < len; i++) {
+				
+				(_menuBtns[i] as MenuBtn).enable();
+				
+			}
+		}
+		
+		public function get board():Board 
+		{
+			return _board;
 		}
 		
 		
